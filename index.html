@@ -697,7 +697,7 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form id="gform" method="post" action="https://script.google.com/macros/s/AKfycbxd6e5DWOa3HbfhjoRn5ZsGpJXmZDgbcEpA1GuRS0hmNkIiXDK6kIsfGMEvmO4EyaQjeA/exec" class="form" data-form>
+          <form id="submit-form" action="" class="form" data-form>
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
@@ -737,7 +737,26 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+
+  <script>
+    $("#submit-form").submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+            url:"https://script.google.com/macros/s/AKfycbxd6e5DWOa3HbfhjoRn5ZsGpJXmZDgbcEpA1GuRS0hmNkIiXDK6kIsfGMEvmO4EyaQjeA/exec",
+            data:$("#submit-form").serialize(),
+            method:"post",
+            success:function (response){
+                window.location.reload()
+            },
+            error:function (err){
+                alert("Something Error")
+
+            }
+        })
+    })
+</script>
 </body>
 
 </html>
