@@ -318,6 +318,7 @@ main {
 
 .avatar-box {
   background: var(--bg-gradient-onyx);
+  border-radius: 20px;
  
 }
 .avatar-box img{
@@ -1328,7 +1329,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar-info { gap: 25px; }
 
-  .avatar-box { border-radius: 30px; }
+  .avatar-box { 
+    border-radius: 30px;
+  }
 
   .avatar-box img { width: 120px; }
 
@@ -1870,4 +1873,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+
+article.donate .pay{
+  margin-bottom: 20px;
 }
